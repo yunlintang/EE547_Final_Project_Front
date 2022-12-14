@@ -1,0 +1,4 @@
+.example-header-image {
+  background-image: url("../../../assets/static/images/yelp-1-logo-png-transparent.png");
+  background-size: cover;
+}

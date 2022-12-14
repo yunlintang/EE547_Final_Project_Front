@@ -1,0 +1,7 @@
+.star{
+    color: red;
+}
+#search-form-round{
+    border-radius: 10px;
+    border: 2px solid #dedede;
+}

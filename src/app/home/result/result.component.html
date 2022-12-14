@@ -1,0 +1,39 @@
+<p
+  *ngIf="isNoResults()"
+  style="text-align: center; color: red; font-size: large"
+>
+  There is no results for your search
+</p>
+
+<mat-grid-list cols="2" rowHeight="1:1" *ngIf="!isNoResults()">
+  <mat-grid-tile *ngFor="let option of showResultsTab(); index as i">
+    <mat-card class="example-card col-md-8">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ option.name }}</mat-card-title>
+        <mat-card-subtitle>rating: {{ option.rate }}</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="{{ option.img }}"
+        class="img-responsive"
+        style="width: 30vm; height: 25vw"
+      />
+      <mat-card-content>
+        <p>Address: {{ option.address }}</p>
+        <p>Phone: {{ option.phone }}</p>
+        <a class="card-text" target="_blank" href="{{ option.url }}"
+          >Find more on Yelp!</a
+        >
+      </mat-card-content>
+      <mat-card-actions>
+        <input id="{{ i }}" [matDatepicker]="picker_i" [min]="today" />
+        <mat-datepicker-toggle [for]="picker_i"></mat-datepicker-toggle>
+        <mat-datepicker #picker_i></mat-datepicker>
+        <button class="btn btn-danger" (click)="reserve(option.name, i)">
+          Reserve Now
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

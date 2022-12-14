@@ -1,0 +1,20 @@
+<h1 *ngIf="!getNoUser()" style="text-align: center; margin-top: 40px">
+  Please log in to view reservations!
+</h1>
+<h1 *ngIf="getNoUser()" style="text-align: center; margin-top: 40px">
+  Your current Reservations
+</h1>
+<mat-grid-list cols="2" rowHeight="2:1" *ngIf="getNoUser()">
+  <mat-grid-tile *ngFor="let res of showReservationList(); index as i">
+    <mat-card class="example-card col-md-8">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ res.name }}</mat-card-title>
+        <mat-card-subtitle>Reservation Date: {{ res.date }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button (click)="cancel(i)" align="end">cancel</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

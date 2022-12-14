@@ -1,0 +1,57 @@
+<h1 style="text-align: center; margin-top: 40px">
+  Welcom to Restaurants Search Websites! Find new everyday!
+</h1>
+<div
+  class="col-md-4 offset-md-4"
+  style="
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 2px solid rgb(109, 116, 133);
+  "
+>
+  <h2 style="margin-top: 10px">Login</h2>
+  <form (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col form-group">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" id="password" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-danger" style="margin-right: 20px">
+        Log in
+      </button>
+      <p (click)="register()" style="color: blue; margin-top: 10px">Register</p>
+    </div>
+    <div class="row" style="text-align: center">
+      <p class="col">
+        <ngb-alert type="danger" [dismissible]="true" *ngIf="getNoInput()">
+          <strong>Failed!</strong> Username and password are both required
+        </ngb-alert>
+      </p>
+    </div>
+    <div class="row" style="text-align: center">
+      <p class="col">
+        <ngb-alert type="danger" [dismissible]="true" *ngIf="notMatch">
+          <strong>Failed!</strong> Username and password are not match, please
+          check your input
+        </ngb-alert>
+      </p>
+    </div>
+    <div class="row" style="text-align: center">
+      <p class="col">
+        <ngb-alert type="danger" [dismissible]="true" *ngIf="noRecord">
+          <strong>Failed!</strong> Username doesn't exsit, please check your
+          input or register frist
+        </ngb-alert>
+      </p>
+    </div>
+  </form>
+</div>

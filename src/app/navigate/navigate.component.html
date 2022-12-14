@@ -1,0 +1,58 @@
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      href="home"
+      routerLink="/home"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      style="color: black"
+      >Home</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      href="reservations"
+      routerLink="/reservations"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      style="color: black"
+      >My Reservations</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      href="rank"
+      routerLink="/rank"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      style="color: black"
+      >Rank</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      href="about"
+      routerLink="/about"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      style="color: black"
+      >About</a
+    >
+  </li>
+  <li class="nav-item" *ngIf="showLogout()">
+    <a
+      (click)="logout()"
+      class="nav-link"
+      href="home"
+      routerLink="/home"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      style="color: black"
+      >Log out</a
+    >
+  </li>
+</ul>

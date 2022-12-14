@@ -1,0 +1,37 @@
+<div class="row">
+  <h1 style="text-align: center; margin-top: 40px">
+    Great time to vote for your favourate Restaurant!
+  </h1>
+  <button
+    class="btn btn-danger col-md-4 offset-md-4"
+    style="margin-top: 20px"
+    (click)="getVotings()"
+  >
+    Voting of this month Start!
+  </button>
+</div>
+<div>
+  <h2 style="text-align: center; margin-top: 50px">
+    Fried Chicken Month! Help us find the best Chicken you like
+  </h2>
+</div>
+<mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let voting of showVotingList(); index as i">
+    <mat-card class="example-card col-md-8">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ voting.name }}</mat-card-title>
+        <mat-card-subtitle>Numbers: {{ voting.numbers }}</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="{{ voting.url }}"
+        class="img-responsive"
+        style="width: 30vm; height: 25vw"
+      />
+      <mat-card-actions>
+        <button (click)="vote(i)">VOTE</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

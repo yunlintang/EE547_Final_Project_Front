@@ -1,0 +1,67 @@
+<!-- 栅格系列例子 -->
+<div class="container">
+  <div
+    id="search-form-round"
+    class="col-md-6 offset-md-3"
+    style="margin-top: 50px"
+  >
+    <h2 class="text-center" style="padding-top: 20px; color: red">
+      Restaurants Search
+    </h2>
+    <form ngNativeValidate class="container" (ngSubmit)="submit()">
+      <div class="form-row mt-5">
+        <div class="form-group col">
+          <label for="keyword">Keyword&nbsp;<span class="star">*</span></label>
+          <input
+            type="text"
+            class="form-control"
+            id="keyword"
+            placeholder="eg. burger"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col form-group">
+          <label for="distance">Distance</label>
+          <input
+            type="text"
+            class="form-control"
+            id="distance"
+            placeholder="10"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col">
+          <label for="loaction"
+            >Location&nbsp;<span class="star">*</span></label
+          >
+          <input type="text" class="form-control" id="location" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="auto-detect"
+            (click)="checkBox()"
+          />
+          <label for="auto-detect" class="form-check-lable"
+            >Use my location</label
+          >
+        </div>
+      </div>
+      <div class="form-group" style="text-align: center">
+        <button type="submit" class="btn btn-danger" style="margin-right: 20px">
+          Submit
+        </button>
+        <button type="clear" class="btn btn-danger" (click)="clear()">
+          Clear
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
